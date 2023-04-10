@@ -1,25 +1,86 @@
-import logo from './logo.svg';
 import './App.css';
+import lime from './assets/fresh-lemon.png';
+import axios from 'axios';
+import bk from './assets/bk.png';
+import mcd from './Adverts/mcd.jpg';
+import dmino from './assets/dmino.png';
+import phut from './assets/phut.png';
+import nineteen from './assets/1947.jpg';
+import bucks from './assets/bucks.png';
+import bq from './assets/bq.jpg';
+import life from './assets/life.jpg';
+import sheesha from './assets/sheesha.png';
+
+const food_img = [bk,dmino,phut,nineteen,bucks,bq,life,sheesha]
+const name = ["Burger King","Domino's","Pizzahut","1947","Starbucks","Barbeque Nation","Lifetree","Dr.Sheesha"]
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+  function handleQuery(event){
+      if(event.keyCode === 13){
+        let query = document.querySelector("#srch").value;
+        console.log(query);
+        axios
+         .post("http://127.0.0.1:3001/srch",{
+          srch:query
+         })
+         .then((res)=>{console.log(res)})
+         .catch(error => console.log(error));
+      }
+  }
+  return(
+    <div className="App" onLoad={()=>{Rec()}}>  
+      <div className="apphead">   
+        <a href='/'>
+        <div className='brand'>
+          <img src={lime} alt="picture of a lemon" className='logo'></img><h2 className='branding'>citrus</h2>
+        </div>
         </a>
-      </header>
+        <input onKeyDown={(event)=>{handleQuery(event)}} id="srch" type="text" className="search-bar" placeholder='search' maxLength={15}></input>
+      </div>
+      <a href="https://www.mcdonalds.com/us/en-us.html" target="_blank">
+        <img class="adds" id="mcd" src={mcd}></img>
+      </a>
     </div>
   );
+} 
+
+let x=0;
+let j=0;
+
+function Rec(){
+    const feed = document.querySelector(".App");
+    while(j<8){
+      const anch = document.createElement('a');
+      const head = document.createElement('h1');
+      head.innerHTML = name[j]; 
+      anch.href = "https://www.burgerking.in/";
+      anch.target = "_blank";
+      const node = document.createElement("img");
+      node.setAttribute("class","feedbox");
+      node.src = food_img[j];
+      node.style.height = "20%";
+      node.style.width = "15%";
+      node.style.marginLeft = "2%";
+      node.style.border = "3px solid black";
+      node.style.borderRadius = "10px";
+      node.style.position = "absolute";
+      if(j<4){
+        node.style.top = "10%";
+        j++;
+      }else if(j==4){
+        x=0;
+        node.style.top = "40%";
+        j++;
+      }else{
+        node.style.top = "40%";
+        j++;
+      }
+      node.style.left = `${x}%`;
+      anch.append(node);
+      anch.append(head);
+      feed.append(anch);
+      x+=20;
+    }
 }
 
 export default App;

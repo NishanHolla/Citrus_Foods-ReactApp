@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .App-logo {
@@ -35,4 +37,78 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes threed {
+  from {
+    transform: heigth("300px"),
+               width("400px")
+  }
+  to{
+    transform: height("320px"),
+               width("420px")
+  }
+}
+
+.apphead{
+  height:60px;
+  /* margin-right:100px; */
+  width:78%;
+  background-color: lime;
+}
+
+.logo{
+  position:absolute;
+  left:1%;
+  height:7%;
+  width:4%;
+}
+
+.branding{
+  position:absolute;
+  left:5%;
+  font-style: italic;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size:200%;
+  color:yellow;
+  margin-top:0.5%;
+}
+
+.search-bar{
+  position:absolute;
+  right:22%;
+  font-size: 25px;
+  padding-left: 15px;
+  margin-top:10px;
+  border-radius:20px;
+  height:35px;
+}
+
+/* @keyframes hovereff{
+  from{height: 100px;}
+  to{height:400px;}
+}
+*/
+
+/* .feedbox:hover{
+  cursor: pointer;
+  animation-name: hoveriff;
+  animation-duration: infinite;
+}  */
+
+#sendreq{
+  position: relative;
+}
+
+.adds{
+  position: relative;
+  right:10px;
+}
+
+#mcd{
+  position: absolute;
+  top:5px;
+  right:10px;
+  height:60%;
+  width:20%;
 }
