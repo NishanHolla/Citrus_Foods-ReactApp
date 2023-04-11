@@ -43,7 +43,7 @@ function App() {
                       <img src={lime} alt="picture of a lemon" className='logo'></img>
                     </div>
                     <div class="col-sm">
-                      <h2 className='branding'>citrus</h2> 
+                      <h2 className='branding' id="brand">citrus</h2> 
                     </div>
                   </div>
                 </div>
@@ -68,6 +68,8 @@ function App() {
 
 let x=0;
 let j=0;
+
+
 
 function Rec(){
     const feed = document.querySelector(".App");
