@@ -22,7 +22,6 @@ function Apple() {
           <img class="adds" id="mcd" src={mcd}></img>
         </a>
     </div>
-        
   );
 } 
 
@@ -35,7 +34,7 @@ function Rec(){
     const feed = document.querySelector("#feed");
     while(j<8){
       const anch = document.createElement('a');
-      const head = document.createElement('h1');
+      const head = document.createElement('h2');
       head.innerHTML = name[j]; 
       anch.href = "https://www.burgerking.in/";
       anch.target = "_blank";
@@ -47,18 +46,23 @@ function Rec(){
       node.style.border = "3px solid black";
       node.style.borderRadius = "10px";
       node.style.position = "absolute";
+      head.style.position = "absolute";
       if(j<4){
         node.style.top = "15%";
+        head.style.top = "35%";
         j++;
       }else if(j==4){
         x=0;
         node.style.top = "45%";
+        head.style.top = "65%";
         j++;
       }else{
         node.style.top = "45%";
+        head.style.top = "65%";
         j++;
       }
       node.style.left = `${x}%`;
+      head.style.left = `${x}%`;    
       anch.append(node);
       anch.append(head);
       feed.append(anch);
