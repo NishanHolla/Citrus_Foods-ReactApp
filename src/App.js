@@ -10,6 +10,7 @@ import bucks from './assets/bucks.png';
 import bq from './assets/bq.jpg';
 import life from './assets/life.jpg';
 import sheesha from './assets/sheesha.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const food_img = [bk,dmino,phut,nineteen,bucks,bq,life,sheesha]
 const name = ["Burger King","Domino's","Pizzahut","1947","Starbucks","Barbeque Nation","Lifetree","Dr.Sheesha"]
@@ -29,18 +30,39 @@ function App() {
   }
   return(
     <div className="App" onLoad={()=>{Rec()}}>  
-      <div className="apphead">   
-        <a href='/'>
-        <div className='brand'>
-          <img src={lime} alt="picture of a lemon" className='logo'></img><h2 className='branding'>citrus</h2>
-        </div>
-        </a>
-        <input onKeyDown={(event)=>{handleQuery(event)}} id="srch" type="text" className="search-bar" placeholder='search' maxLength={15}></input>
+    <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-expand-xl  navbar-light bg-danger pl-5 pt-3">
+          <ul type="none" class="navbar-nav mr-auto"> 
+            <li class="nav-item">
+              <a class="navbar-brand" href="#">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm">
+                      <img src={lime} alt="picture of a lemon" className='logo'></img>
+                    </div>
+                    <div class="col-sm">
+                      <h2 className='branding'>citrus</h2> 
+                    </div>
+                  </div>
+                </div>
+              </a>      
+            </li>
+            <li class="nav-item">
+              <input onKeyDown={(event)=>{handleQuery(event)}} id="srch" type="text" className="search-bar" placeholder='search' maxLength={15}></input>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <a href="https://www.mcdonalds.com/us/en-us.html" target="_blank">
-        <img class="adds" id="mcd" src={mcd}></img>
-      </a>
+      <div class="col">
+        <a href="https://www.mcdonalds.com/us/en-us.html" target="_blank">
+          <img class="adds" id="mcd" src={mcd}></img>
+        </a>
+      </div>  
     </div>
+    </div>
+    </div>  
   );
 } 
 
