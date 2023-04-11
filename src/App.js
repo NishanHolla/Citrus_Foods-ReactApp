@@ -17,6 +17,7 @@ const name = ["Burger King","Domino's","Pizzahut","1947","Starbucks","Barbeque N
 function Apple() {
   return(
     <div className="App" onLoad={()=>{Rec()}}>  
+      <div id="feed"></div>
         <a href="https://www.mcdonalds.com/us/en-us.html" target="_blank">
           <img class="adds" id="mcd" src={mcd}></img>
         </a>
@@ -31,7 +32,7 @@ let j=0;
 
 
 function Rec(){
-    const feed = document.querySelector(".App");
+    const feed = document.querySelector("#feed");
     while(j<8){
       const anch = document.createElement('a');
       const head = document.createElement('h1');
@@ -39,7 +40,6 @@ function Rec(){
       anch.href = "https://www.burgerking.in/";
       anch.target = "_blank";
       const node = document.createElement("img");
-      node.setAttribute("class","feedbox");
       node.src = food_img[j];
       node.style.height = "20%";
       node.style.width = "15%";
@@ -48,14 +48,14 @@ function Rec(){
       node.style.borderRadius = "10px";
       node.style.position = "absolute";
       if(j<4){
-        node.style.top = "10%";
+        node.style.top = "15%";
         j++;
       }else if(j==4){
         x=0;
-        node.style.top = "40%";
+        node.style.top = "45%";
         j++;
       }else{
-        node.style.top = "40%";
+        node.style.top = "45%";
         j++;
       }
       node.style.left = `${x}%`;

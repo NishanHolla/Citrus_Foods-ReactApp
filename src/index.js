@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import lime from './assets/fresh-lemon.png';
 import Apple from './App';
+import './App.css';
 import axios from 'axios';
 
 function handleQuery(event){
@@ -21,20 +21,11 @@ function handleQuery(event){
 function App(){
     return(
         <div>
-            <nav class="navbar navbar-expand-xl  navbar-light bg-danger pl-5 pt-3">
+            <nav class="navbar navbar-expand-xl  navbar-light bg-danger pl-5 pb-3">
             <ul type="none" class="navbar-nav mr-auto"> 
                 <li class="nav-item">
                 <a class="navbar-brand" href="#">
-                    <div class="container">
-                    <div class="row">
-                        <div class="col-sm">
-                        <img src={lime} alt="picture of a lemon" className='logo'></img>
-                        </div>
-                        <div class="col-sm">
-                        <h2 className='branding' id="brand">citrus</h2> 
-                        </div>
-                    </div>
-                    </div>
+                    <h2 className='branding' id="brand">citrus</h2> 
                 </a>      
                 </li>
                 <li class="nav-item">
