@@ -1,5 +1,4 @@
 import './App.css';
-import lime from './assets/fresh-lemon.png';
 import axios from 'axios';
 import bk from './assets/bk.png';
 import mcd from './Adverts/mcd.jpg';
@@ -15,54 +14,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const food_img = [bk,dmino,phut,nineteen,bucks,bq,life,sheesha]
 const name = ["Burger King","Domino's","Pizzahut","1947","Starbucks","Barbeque Nation","Lifetree","Dr.Sheesha"]
 
-function App() {
-  function handleQuery(event){
-      if(event.keyCode === 13){
-        let query = document.querySelector("#srch").value;
-        console.log(query);
-        axios
-         .post("http://127.0.0.1:3001/srch",{
-          srch:query
-         })
-         .then((res)=>{console.log(res)})
-         .catch(error => console.log(error));
-      }
-  }
+function Apple() {
   return(
     <div className="App" onLoad={()=>{Rec()}}>  
-    <div class="container">
-    <div class="row">
-      <div class="col">
-        <nav class="navbar navbar-expand-xl  navbar-light bg-danger pl-5 pt-3">
-          <ul type="none" class="navbar-nav mr-auto"> 
-            <li class="nav-item">
-              <a class="navbar-brand" href="#">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm">
-                      <img src={lime} alt="picture of a lemon" className='logo'></img>
-                    </div>
-                    <div class="col-sm">
-                      <h2 className='branding' id="brand">citrus</h2> 
-                    </div>
-                  </div>
-                </div>
-              </a>      
-            </li>
-            <li class="nav-item">
-              <input onKeyDown={(event)=>{handleQuery(event)}} id="srch" type="text" className="search-bar" placeholder='search' maxLength={15}></input>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="col">
         <a href="https://www.mcdonalds.com/us/en-us.html" target="_blank">
           <img class="adds" id="mcd" src={mcd}></img>
         </a>
-      </div>  
     </div>
-    </div>
-    </div>  
+        
   );
 } 
 
@@ -107,4 +66,4 @@ function Rec(){
     }
 }
 
-export default App;
+export default Apple;
