@@ -1,7 +1,6 @@
 import './App.css';
 import axios from 'axios';
 import bk from './assets/bk.png';
-import mcd from './Adverts/mcd.jpg';
 import dmino from './assets/dmino.png';
 import phut from './assets/phut.png';
 import nineteen from './assets/1947.jpg';
@@ -14,14 +13,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const food_img = [bk,dmino,phut,nineteen,bucks,bq,life,sheesha]
 const name = ["Burger King","Domino's","Pizzahut","1947","Starbucks","Barbeque Nation","Lifetree","Dr.Sheesha"]
 
-function Apple() {
-  return(
-    <div className="App" onLoad={()=>{Rec()}}>  
-      <div id="feed"></div>
-        <a href="https://www.mcdonalds.com/us/en-us.html" target="_blank">
-          <img class="adds" id="mcd" src={mcd}></img>
-        </a>
-    </div>
+function Feed() {
+  return(  
+    <div id="feed" onLoad={Rec()}></div>
   );
 } 
 
@@ -70,4 +64,4 @@ function Rec(){
     }
 }
 
-export default Apple;
+export default Feed;
