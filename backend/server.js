@@ -1,20 +1,21 @@
 var express = require('express');
 var app = express();
 var cors = require('cors');
-var mysql = require('mysql');
 var date = new Date();
+const mongoose = require('mongoose');
 
-app.use(cors());
+app.use(cors());+
 app.use(express.json());
 app.use(express.urlencoded());
 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "NishaN@11",
-    database: "holi_mein_goli"
+mongoose.connect('mongodb://localhost:27017/citrus-food-services');
+
+const searchSchema = new mongoose.Schema({
+    query:String,
+    freq:Number
 });
 
+const search = mongoose.model('search','searchShema');
 
 let hour  = date.getHours();
 let minute = date.getMinutes();
@@ -22,7 +23,7 @@ let second = date.getSeconds();
 let date_set = date.getFullYear()+"-"+date.getMonth()+"-"+date.getDay();
 
 if(hour>12){
-    hour=hour-12;    
+    hour=hour-12;
 }
 
 let prop_date = "'"+date_set+" "+hour+":"+minute+":"+second+"'";

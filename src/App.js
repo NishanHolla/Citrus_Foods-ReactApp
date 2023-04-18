@@ -26,24 +26,26 @@ function Apple() {
 } 
 
 let x=0;
+let y=0;
 let j=0;
 
 
 
 function Rec(){
     const feed = document.querySelector("#feed");
-    while(j<8){
+    while(j<8){         
       const anch = document.createElement('a');
-      const head = document.createElement('h2');
+      const head = document.createElement('h4');
       head.innerHTML = name[j]; 
       anch.href = "https://www.burgerking.in/";
       anch.target = "_blank";
       const node = document.createElement("img");
       node.src = food_img[j];
       node.style.height = "20%";
-      node.style.width = "15%";
-      node.style.marginLeft = "2%";
-      node.style.border = "3px solid black";
+      node.style.width = "10%";
+      node.style.marginLeft = "4%";
+      head.style.marginLeft = "3%";
+      //node.style.border = "3px solid black";
       node.style.borderRadius = "10px";
       node.style.position = "absolute";
       head.style.position = "absolute";
@@ -62,11 +64,12 @@ function Rec(){
         j++;
       }
       node.style.left = `${x}%`;
-      head.style.left = `${x}%`;    
+      head.style.left = `${x+2}%`;    
       anch.append(node);
       anch.append(head);
       feed.append(anch);
-      x+=20;
+      x+=17;
+      //y+=20;
     }
 }
 
