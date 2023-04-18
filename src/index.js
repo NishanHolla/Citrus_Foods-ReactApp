@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Feed from './App';
 import './App.css';
+import Template from './components/template';
 import mcd from './Adverts/mcd.jpg';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import{ BrowserRouter as Router,Route,Routes,} from 'react-router-dom';
 
 function handleQuery(event){
@@ -48,6 +50,7 @@ function App(){
             <Routes>
                 <Route default path="/" element={<Feed></Feed>}></Route>
                 <Route path="home" element={<Feed></Feed>}></Route>
+                <Route path="order" element={<Template></Template>}></Route>
             </Routes>
         </Router>
     );
@@ -60,4 +63,4 @@ root.render(
         <Home></Home>
         <App></App>
      </div>
-);
+    );

@@ -1,5 +1,4 @@
 import './App.css';
-import axios from 'axios';
 import bk from './assets/bk.png';
 import dmino from './assets/dmino.png';
 import phut from './assets/phut.png';
@@ -9,13 +8,17 @@ import bq from './assets/bq.jpg';
 import life from './assets/life.jpg';
 import sheesha from './assets/sheesha.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 const food_img = [bk,dmino,phut,nineteen,bucks,bq,life,sheesha]
 const name = ["Burger King","Domino's","Pizzahut","1947","Starbucks","Barbeque Nation","Lifetree","Dr.Sheesha"]
 
 function Feed() {
-  return(  
-    <div id="feed" onLoad={Rec()}></div>
+  useEffect(()=>{
+    document.addEventListener('DOMContentLoaded',Rec());
+  })
+  return(
+    <div id="feed"></div>
   );
 } 
 
@@ -30,7 +33,7 @@ function Rec(){
       const anch = document.createElement('a');
       const head = document.createElement('h2');
       head.innerHTML = name[j]; 
-      anch.href = "https://www.burgerking.in/";
+      anch.href = "http://localhost:3000/order";
       anch.target = "_blank";
       const node = document.createElement("img");
       node.src = food_img[j];
@@ -56,7 +59,7 @@ function Rec(){
         j++;
       }
       node.style.left = `${x}%`;
-      head.style.left = `${x}%`;    
+      head.style.left = `${x+5}%`;    
       anch.append(node);
       anch.append(head);
       feed.append(anch);
