@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Apple from './App';
+import Feed from './App';
 import './App.css';
+import Template from './components/template';
+import mcd from './Adverts/mcd.jpg';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import{ BrowserRouter as Router,Route,Routes,} from 'react-router-dom';
 
 function handleQuery(event){
     if(event.keyCode === 13){
@@ -18,7 +22,7 @@ function handleQuery(event){
     }
 }
 
-function App(){
+function Home(){
     return(
         <div>
             <nav class="navbar navbar-expand-xl  navbar-light bg-danger pl-5 pb-3">
@@ -33,13 +37,30 @@ function App(){
                 </li>
             </ul>
             </nav>
+            <a href="https://www.mcdonalds.com/us/en-us.html" target="_blank">
+                <img class="adds" id="mcd" src={mcd}></img>
+            </a>
         </div>
     );
 }
+
+function App(){
+    return(
+        <Router>
+            <Routes>
+                <Route default path="/" element={<Feed></Feed>}></Route>
+                <Route path="home" element={<Feed></Feed>}></Route>
+                <Route path="order" element={<Template></Template>}></Route>
+            </Routes>
+        </Router>
+    );
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-    <div>
+     <div>
+        <Home></Home>
         <App></App>
-        <Apple></Apple>
-    </div>
-);
+     </div>
+    );

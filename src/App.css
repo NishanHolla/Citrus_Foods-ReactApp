@@ -108,4 +108,20 @@
 
 #feed{
   margin-top: 10%;
+  position: absolute;
 }
+
+.banner{
+  position: relative;
+  left:-10%;
+  height:350px;
+  width:80%;
+}
+
+.list-group{
+  position: relative;
+  margin-top: 3%;
+  width: 75%;
+}
+
+
