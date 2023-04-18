@@ -18,7 +18,7 @@ function Feed() {
     document.addEventListener('DOMContentLoaded',Rec());
   })
   return(
-    <div id="feed"></div>
+    <div id="feed" style={{display:"inline"}}></div>
   );
 } 
 
@@ -37,29 +37,29 @@ function Rec(){
       anch.target = "_blank";
       const node = document.createElement("img");
       node.src = food_img[j];
-      node.style.height = "20%";
-      node.style.width = "15%";
+      node.style.height = "15%";
+      node.style.width = "10%";
       node.style.marginLeft = "2%";
       node.style.border = "3px solid black";
       node.style.borderRadius = "10px";
-      node.style.position = "absolute";
-      head.style.position = "absolute";
+      node.style.position = "relative";
+      head.style.position = "relative";
       if(j<4){
         node.style.top = "15%";
         head.style.top = "35%";
         j++;
       }else if(j==4){
         x=0;
-        node.style.top = "45%";
-        head.style.top = "65%";
+        node.style.top = "25%";
+       head.style.top = "65%";
         j++;
       }else{
-        node.style.top = "45%";
-        head.style.top = "65%";
+       node.style.top = "45%";
+       head.style.top = "65%";
         j++;
       }
       node.style.left = `${x}%`;
-      head.style.left = `${x+5}%`;    
+      head.style.left = `${x}%`;    
       anch.append(node);
       anch.append(head);
       feed.append(anch);
