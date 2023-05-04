@@ -109,6 +109,26 @@
 #feed{
   margin-top: 10%;
   position: absolute;
+  display: block;
+}
+
+.flexbox{
+  display:flex;
+  margin-top: 5%;
+  margin-left: 0px;
+}
+
+.flexbox-item{
+  display: block;
+  justify-items:center;
+  align-items:center;
+  margin:20px;
+}
+
+.flexbox-img{
+  height: 100px;
+  width: 100px;
+
 }
 
 .banner{

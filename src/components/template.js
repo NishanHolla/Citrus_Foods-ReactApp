@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import bk from '../assets/bkbanner.jpg';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState,useEffect } from 'react';
 import axios from "axios";
 
 function Template(){
@@ -30,7 +29,6 @@ function Template(){
                     <span class="badge badge-pill bg-primary "><span class="badge badge-pill"  onClick={()=>{if(item>0){setItem(item-1)}else{setItem(0)}}}>-</span>{item}<span class="badge badge-pill" onClick={()=>{setItem(item+1)}}>+</span></span>
                 </li>
             </ul>        
-            <button onClick={()=>{axios.get("http://localhost:3001/menu").then((res)=>{console.log(res)})}}>Hello brother</button>
             </div>
         </div>
     );
