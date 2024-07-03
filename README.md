@@ -1,4 +1,4 @@
-The purpose of this app is to be a food delivery app.
+The purpose of this app is to build a food delivery app.
 
 # Getting Started with Create React App
 
